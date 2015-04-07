@@ -21,21 +21,36 @@ public class XServlet extends HttpServlet {
 
 	private static final Log log = LogFactory.getLog(XServlet.class);
 	
+	private String resource = "/WEB-INF/classes/log4j.xml";
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		InputStream in = getServletContext().getResourceAsStream("/WEB-INF/classes/log4j.xml");
-		URL path = getServletContext().getResource("/WEB-INF/classes/log4j.xml");
-		log.debug(path.getFile());
 		PrintWriter pw = resp.getWriter();
-		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(in));
-		String content = null;
-		while ((content = bufferedReader.readLine()) != null ) {
-			pw.append(content);
+		try {
+			InputStream in = getServletContext().getResourceAsStream(resource);
+			URL path = getServletContext().getResource(resource);
+			if (path != null) {
+				log.debug(path.getFile());
+			}
+			if (in != null) {
+				try {
+					BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(in));
+					String content = null;
+					while ((content = bufferedReader.readLine()) != null ) {
+						pw.append(content);
+					}
+					
+				} finally {
+					in.close();
+				}
+			} else {
+				pw.write(String.format("load resource %s fail!", resource));
+			}
+		} finally {
+			pw.close();
 		}
 		
-		pw.close();
-		in.close();
 	}
 
 
