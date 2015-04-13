@@ -1,0 +1,29 @@
+<taglib version="2.0" xmlns="http://java.sun.com/xml/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd">
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>2.0</jsp-version>
+	<short-name>jsp template</short-name>
+	<uri>http://tags.app.com/templates/1.0</uri>
+	<description>
+		This tag library page template
+	</description>
+	<tag>
+		<name>block</name>
+		<tag-class>servlet.demo.tags.TemplatesBlock</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>name</name>
+			<required>true</required>
+		</attribute>
+	</tag>
+	<tag>
+		<name>override</name>
+		<tag-class>servlet.demo.tags.TemplatesOverride</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<name>name</name>
+			<required>true</required>
+		</attribute>
+	</tag>
+</taglib>
