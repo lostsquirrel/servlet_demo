@@ -10,7 +10,7 @@
 	</description>
 	<tag>
 		<name>block</name>
-		<tag-class>servlet.demo.tags.TemplatesBlock</tag-class>
+		<tag-class>servlet.demo.tags.templates.BlockTag</tag-class>
 		<body-content>empty</body-content>
 		<attribute>
 			<name>name</name>
@@ -19,7 +19,7 @@
 	</tag>
 	<tag>
 		<name>override</name>
-		<tag-class>servlet.demo.tags.TemplatesOverride</tag-class>
+		<tag-class>servlet.demo.tags.templates.OverrideTag</tag-class>
 		<body-content>JSP</body-content>
 		<attribute>
 			<name>name</name>

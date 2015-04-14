@@ -26,7 +26,7 @@
 	<taglib>
       <taglib-uri>http://tags.app.com/templates/1.0</taglib-uri>
       <taglib-location>
-         /WEB-INF/templates.tld
+         /META-INF/templates.tld
       </taglib-location>
     </taglib>
 	</jsp-config>
