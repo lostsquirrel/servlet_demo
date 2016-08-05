@@ -5,8 +5,8 @@ import java.io.IOException;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.TagSupport;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class BlockTag extends TagSupport {
 
@@ -14,7 +14,7 @@ public class BlockTag extends TagSupport {
 
 	private static final long serialVersionUID = 1L;
 
-	private static Log log = LogFactory.getLog(BlockTag.class);
+	private static Logger log = LoggerFactory.getLogger(BlockTag.class);
 
 	private String name;
 

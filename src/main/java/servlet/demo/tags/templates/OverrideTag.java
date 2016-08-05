@@ -4,17 +4,15 @@ import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.BodyContent;
 import javax.servlet.jsp.tagext.BodyTagSupport;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
-import servlet.demo.tags.templates.BlockTag;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class OverrideTag extends BodyTagSupport {
 
 	private static final long serialVersionUID = 1L;
     
 	@SuppressWarnings("unused")
-	private static Log log = LogFactory.getLog(OverrideTag.class);
+	private static Logger log = LoggerFactory.getLogger(OverrideTag.class);
 	
     private String name;
     

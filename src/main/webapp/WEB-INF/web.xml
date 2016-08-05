@@ -12,6 +12,7 @@
 		<servlet-name>x-servlet</servlet-name>
 		<url-pattern>/x</url-pattern>
 	</servlet-mapping>
+	
 	<servlet>
 		<servlet-name>jsp-servlet</servlet-name>
 		<servlet-class>servlet.demo.JspServlet</servlet-class>
@@ -20,6 +21,16 @@
 	<servlet-mapping>
 		<servlet-name>jsp-servlet</servlet-name>
 		<url-pattern>/jsp</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>count-servlet</servlet-name>
+		<servlet-class>servlet.demo.RequestCountServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>count-servlet</servlet-name>
+		<url-pattern>/count</url-pattern>
 	</servlet-mapping>
 
 	<jsp-config>
