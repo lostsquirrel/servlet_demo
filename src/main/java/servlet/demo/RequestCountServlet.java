@@ -21,14 +21,14 @@ public class RequestCountServlet extends HttpServlet {
 	
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		count++;
-		long millis = new Random().nextLong() / 1000;
-
+		count += 1;
+		long millis = new Random().nextLong() % 1000;
+		millis = millis < 0 ? millis * -1 : millis;
 		//		System.out.println(count);
 		try {
+			log.debug(String.format("sleep in %d ms", millis));
 			Thread.sleep(millis);
 		} catch (InterruptedException e) {
-			e.printStackTrace();
 			log.error(e.getMessage());
 		}
 		log.debug(""+count);
