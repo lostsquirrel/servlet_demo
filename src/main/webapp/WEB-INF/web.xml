@@ -3,29 +3,10 @@
 	xmlns="http://java.sun.com/xml/ns/javaee"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	id="WebApp_ID" version="3.0">
-	<servlet>
-		<servlet-name>x-servlet</servlet-name>
-		<servlet-class>servlet.demo.XServlet</servlet-class>
-	</servlet>
 
-	<servlet-mapping>
-		<servlet-name>x-servlet</servlet-name>
-		<url-pattern>/x</url-pattern>
-	</servlet-mapping>
-	
-	<servlet>
-		<servlet-name>jsp-servlet</servlet-name>
-		<servlet-class>servlet.demo.JspServlet</servlet-class>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>jsp-servlet</servlet-name>
-		<url-pattern>/jsp</url-pattern>
-	</servlet-mapping>
-	
 	<servlet>
 		<servlet-name>count-servlet</servlet-name>
-		<servlet-class>servlet.demo.RequestCountServlet</servlet-class>
+		<servlet-class>demo.servlet.RequestCountServlet</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
@@ -33,13 +14,7 @@
 		<url-pattern>/count</url-pattern>
 	</servlet-mapping>
 
-	<jsp-config>
-	<taglib>
-      <taglib-uri>http://tags.app.com/templates/1.0</taglib-uri>
-      <taglib-location>
-         /META-INF/templates.tld
-      </taglib-location>
-    </taglib>
-	</jsp-config>
-	
+	<listener>
+		<listener-class>demo.servlet.CountListener</listener-class>
+	</listener>
 </web-app>
